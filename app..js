@@ -34,3 +34,7 @@ navBar.addEventListener("click", function (e) {
     sideBar.remove();
   });
 });
+
+document.querySelector("span").addEventListener("click", () => {
+  confetti();
+});
