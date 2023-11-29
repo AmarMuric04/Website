@@ -10,8 +10,9 @@ body {
   overflow-x: hidden;
 }
 nav {
+  z-index: 100;
   padding: 1vh 4vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -130,7 +131,7 @@ h1 {
 }
 .positionY__shifted {
   color: #222;
-  transform: translateY(-65vh);
+  transform: translateY(-60vh);
 }
 .hamburger {
   transform: scale(1.5);
@@ -204,5 +205,18 @@ h1 {
 @media only screen and (max-width: 1000px) {
   .btn__heading::before {
     top: 30%;
+  }
+  #heading {
+    justify-content: start;
+    margin-top: 200px;
+    flex-direction: column;
+  }
+  nav {
+    width: 100vw;
+  }
+  .card__wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 20vh;
   }
 }
