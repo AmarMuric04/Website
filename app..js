@@ -28,15 +28,21 @@ setTimeout(() => {
   document.body.style.overflowY = "auto";
 }, 3500);
 
+const removeSidebar = function (e) {
+  if (!e.target.classList.contains("sideBar")) {
+    sideBar.remove();
+  }
+};
+
 navBar.addEventListener("click", function (e) {
   if (!e.target.classList.contains("hamburger")) return;
   sideBar.classList.add("transition");
   navBar.insertAdjacentElement("afterend", sideBar);
-  sideBar.addEventListener("mouseleave", function () {
-    sideBar.remove();
-  });
+  setTimeout(() => {
+    document.body.addEventListener("click", removeSidebar);
+  }, 100);
+  document.body.removeEventListener("click", removeSidebar);
 });
-
 document.querySelector("span").addEventListener("click", () => {
   confetti();
 });
